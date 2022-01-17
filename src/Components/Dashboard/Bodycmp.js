@@ -153,7 +153,7 @@ function Bodycmp() {
               });
               console.log(query)
               console.log(data1)
-              setCurrentItems(data1.slice(itemOffset, endOffset));
+              setCurrentItems(data1);
         }
           setsortrating(Math.random())
 

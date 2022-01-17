@@ -22,11 +22,12 @@ function Cartcmp() {
     
     else{
     
-      getCart({email:encryptStorage.getItem('user').email}).then(data=>{
-        console.log(data)
-        setcart(data.data.data[0].cart_data)
-        encryptStorage.setItem("cart",data.data.data[0].cart_data)
-      })
+      // getCart({email:encryptStorage.getItem('user').email}).then(data=>{
+      //   console.log(data)
+      //   setcart(data.data.data[0].cart_data)
+      //   encryptStorage.setItem("cart",data.data.data[0].cart_data)
+      // })
+      setcart(encryptStorage.getItem("cart"))
     }
     var sumitem=0
     encryptStorage.getItem("cart").map((item)=>{

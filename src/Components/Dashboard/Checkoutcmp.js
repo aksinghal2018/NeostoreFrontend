@@ -20,11 +20,11 @@ function Checkoutcmp() {
   const  history =useHistory()
   useEffect(() => {
     //console.log(encryptStorage.getItem('user'))
-    getCart({email:encryptStorage.getItem('user').email}).then(data=>{
-      setcart(data.data.data[0].cart_data)
+    // getCart({email:encryptStorage.getItem('user').email}).then(data=>{
+    setcart(encryptStorage.getItem("cart"))
       //console.log(data)
-      encryptStorage.setItem("cart",data.data.data[0].cart_data)
-    })
+      //encryptStorage.setItem("cart",)
+    //})
     var sumitem=0
     encryptStorage.getItem("cart").map((item)=>{
       sumitem=sumitem+item.quantity*item.price
@@ -81,7 +81,9 @@ function Checkoutcmp() {
                     <h4>Address</h4>
                     {
                         address.map((item,index)=>{
-                            return(<div style={{border:"2px solid black",padding:"20px",borderRadius:"5px",marginTop:"20px"}} key={index}>
+                            return(<div style={{border:"2px solid black",padding:"20px",borderRadius:"5px",marginTop:"20px",display:"flex"}} key={index}>
+                        <input type="radio" id="address" name="address" value={index} onChange={handler}  style={{margin:"20px"}}/><div>
+
                             <p>{item.address}</p>
                             <div style={{display:'flex'}}>
                             <p style={{marginRight:"20px"}}>{item.city}</p>
@@ -89,7 +91,7 @@ function Checkoutcmp() {
                             <p style={{marginRight:"20px"}}>{item.country}</p>
                             <p >{item.pincode}</p>
                         </div>
-                        <input type="radio" id="address" name="address" value={index} onChange={handler}  />
+                        </div>
                             </div>)
                         })
                     }

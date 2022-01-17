@@ -105,8 +105,8 @@ function Productdetails() {
         //console.log(productdetail._id)
         var count=0
         encryptStorage.getItem('cart').map(item=>{
-            //console.log(item)
-            //console.log(id)
+            // console.log(item)
+            // console.log(id)
             if(item.id==data){
                 count=count+1
             }
@@ -120,8 +120,8 @@ function Productdetails() {
             var data1=encryptStorage.getItem('cart')
             dispatch({type:'Inc_count'})
             data1.push({name:productdetail.product_name,rating:productdetail.product_rating,price:productdetail.product_cost,quantity:1,image_url:productdetail.product_subImages[0],id:productdetail._id,Status:"In Stock",producer:productdetail.product_producer})
-            updateCart({email:encryptStorage.getItem('user').email,cart_data:data1}).then(data=>
-                console.log(data))
+            // updateCart({email:encryptStorage.getItem('user').email,cart_data:data1}).then(data=>
+            //     console.log(data))
             encryptStorage.setItem('cart',data1)
             alert("item added")
         }

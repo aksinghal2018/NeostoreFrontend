@@ -71,7 +71,7 @@ function Login(props) {
                 if (data.data.success == true) {
                     alert(data.data.message)
                     encryptStorage.setItem("user", JSON.stringify(data.data.customer_details))
-                    encryptStorage.setItem("cart", JSON.stringify([]))
+                    //encryptStorage.setItem("cart", JSON.stringify([]))
                     encryptStorage.setItem("token", JSON.stringify(data.data.token))
                     window.location.replace('/dashboard')
                 }
